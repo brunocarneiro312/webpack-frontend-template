@@ -10,5 +10,17 @@ module.exports = {
     devServer: {
         port: 8080,
         contentBase: './public'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['@babel/preset-env']
+                }
+            }
+        ]
     }
 }
